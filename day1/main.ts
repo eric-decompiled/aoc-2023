@@ -4,6 +4,18 @@ const input = fs.readFileSync("./day1/input.txt").toString().split("\n");
 
 const digitMatcher = /\d/g;
 
+const lookup: Record<string, string> = {
+  one: "1",
+  two: "2",
+  three: "3",
+  four: "4",
+  five: "5",
+  six: "6",
+  seven: "7",
+  eight: "8",
+  nine: "9",
+};
+
 const partOneAnswer = input.reduce((answer, value) => {
   const matches = value.match(digitMatcher);
   const firstDigit = matches ? matches[0] : "";
@@ -16,18 +28,6 @@ const partOneAnswer = input.reduce((answer, value) => {
 
   return answer;
 }, 0);
-
-const lookup: Record<string, string> = {
-  one: "1",
-  two: "2",
-  three: "3",
-  four: "4",
-  five: "5",
-  six: "6",
-  seven: "7",
-  eight: "8",
-  nine: "9",
-};
 
 const matcher = /\d|one|two|three|four|five|six|seven|eight|nine/g;
 
